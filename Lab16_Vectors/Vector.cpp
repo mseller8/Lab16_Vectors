@@ -26,7 +26,10 @@ int main() {
 		cin >> choice >> choiceNum;
 		if (choice == 'a') {
 			vector<double>::iterator it = v.end();
-			v.insert(it, choiceNum);
+			it = find(v.begin(), v.end(), choiceNum);
+			if (it == v.end()) {
+				v.insert(it, choiceNum);
+			}
 			output(v);
 			
 		}
